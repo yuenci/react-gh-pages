@@ -52,7 +52,7 @@ export default defineConfig({
 
 ### 5. Initialize git
 ```bash
-$ init git
+$ git init
 ```
 
 ### 6. Add remote address
