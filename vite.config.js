@@ -7,5 +7,6 @@ export default defineConfig({
   // change build file name to build ,default is dist
   build: {
     outDir: 'build'
-  }
+  },
+  base: './',
 })
