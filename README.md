@@ -5,44 +5,41 @@ Reference：
 https://github.com/gitname/react-gh-pages
 
 
-1. Build a new repo：
+### 1. Build a new repo(without readme/license) and get the url：
 
 https://github.com/yuenci/react-gh-pages
 
-
-2. Add dependence to local project
+### 2. Add dependence to local project
 
 ```bash
-yarn add gh-pages
+$ yarn add gh-pages
 ```
 
+### 3. Set package.json
 
-3. Set package.json
-
-```json
+```diff
 {
     "name": "react_app",
     "private": true,
     "version": "0.0.0",
-  + "homepage": "https://yuenci.github.io/react-gh-pages",
++   "homepage": "https://yuenci.github.io/react-gh-pages",
     "type": "module",
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-      + "predeploy": "yarn build",
-      + "deploy": "gh-pages -d build",
-        "preview": "vite preview"
+        "preview": "vite preview",
++       "predeploy": "yarn build",
++       "deploy": "gh-pages -d build"
+        
     },
 }
-"
 ```
 
 homepage: https://{gitname}.github.io/{projectName}
 
+### 4. vite.config.js
 
-4. vite.config.js
-
-```
+```diff
 export default defineConfig({
   plugins: [react()],
 +  build: {
@@ -53,18 +50,18 @@ export default defineConfig({
 
 ```
 
-5. Initialize git
+### 5. Initialize git
 ```bash
-init git
+$ init git
 ```
 
-6. Add remote address
+### 6. Add remote address
 
 ```bash
-git remote add origin https://github.com/yuenci/react-gh-pages
+$ git remote add origin https://github.com/yuenci/react-gh-pages
 ```
 
-7. Deploy
+### 7. Deploy
 ```bash
-yarn deploy
+$ yarn deploy
 ```
